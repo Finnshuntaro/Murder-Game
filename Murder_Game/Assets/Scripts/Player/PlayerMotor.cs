@@ -73,8 +73,6 @@ public class PlayerMotor : MonoBehaviour
         {
             if (Physics.Raycast(playerCamera.position, Vector3.down, out RaycastHit hit, 3f))
             {
-                Debug.Log("Raycast hit: " + hit.collider.name + ", tag: " + hit.collider.tag);
-
                 switch (hit.collider.tag)
                 {
                     case "Footsteps/CARPET":
