@@ -26,6 +26,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (isDialogueActive) return;
 
+        npc.hasSpoken = true; // Tracks that the NPC who has been spoken to
+
         isDialogueActive = true;
         dialoguePanel.SetActive(true);
         nameText.text = npc.npcName;
