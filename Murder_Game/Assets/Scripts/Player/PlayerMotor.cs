@@ -3,6 +3,8 @@ using UnityEngine.EventSystems;
 
 public class PlayerMotor : MonoBehaviour
 {
+    public DialogueManager dialogueManager; // references the dialogueManager to see the isDialogueActive state
+
     private CharacterController controller;
     private Vector3 playerVelocity;
     public bool isGrounded;
@@ -42,6 +44,10 @@ public class PlayerMotor : MonoBehaviour
     public void ProcessMove(Vector2 input)
     {
         currentInput = input;
+
+        // stop movements if dialogue is happening
+        if (dialogueManager != null && dialogueManager.IsDialogueActive())
+            return; 
 
         Vector3 moveDirection = Vector3.zero;
         moveDirection.x = input.x;

@@ -98,4 +98,9 @@ public class DialogueManager : MonoBehaviour
         isDialogueActive = false;
         dialoguePanel.SetActive(false);
     }
+
+    public bool IsDialogueActive()
+    {
+        return isDialogueActive;
+    }
 }

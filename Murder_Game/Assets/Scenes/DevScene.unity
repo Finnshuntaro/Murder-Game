@@ -1731,6 +1731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d82dbd7d6264ff146bc6e1532b5f2a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 783598748}
   cam: {fileID: 330585545}
   xSensitivity: 30
   yensitivity: 30
@@ -1746,6 +1747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ef354be021227c4aa5141b93ce7fa0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 783598748}
   isGrounded: 0
   speed: 5
   gravity: -9.8
