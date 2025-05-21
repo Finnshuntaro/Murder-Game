@@ -1,4 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class AccuseSystem : MonoBehaviour
 {
@@ -14,11 +18,20 @@ public class AccuseSystem : MonoBehaviour
             if (npc1.hasSpoken && npc2.hasSpoken)
             {
                 Debug.Log("All NPCs have been spoken to!");
+                ToAccuseScene();
             }
             else
             {
                 Debug.Log("You still need to speak to all NPCs.");
             }
         }
+    }
+
+    // changes scene to the AccuseScene
+    public void ToAccuseScene()
+    {
+        SceneManager.LoadScene(3);
+
+        Cursor.lockState = CursorLockMode.None;
     }
 }
