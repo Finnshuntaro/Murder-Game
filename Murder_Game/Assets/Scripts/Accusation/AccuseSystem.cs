@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class AccuseSystem : MonoBehaviour
 {
+    public DialogueManager dialogueManager; // references the dialogueManager to see the isDialogueActive state
+
     // Assigning this in the inspector allows you to check each NPC 
     public NPCScript npc1; 
     public NPCScript npc2; 
@@ -17,6 +19,12 @@ public class AccuseSystem : MonoBehaviour
             // checks to see if all NPC's have been spoken to.
             if (npc1.hasSpoken && npc2.hasSpoken)
             {
+                // First, check if a dialogue is currently active
+                if (dialogueManager != null && dialogueManager.IsDialogueActive())
+                {
+                    Debug.Log("You can’t proceed while a dialogue is active.");
+                    return;
+                }
                 Debug.Log("All NPCs have been spoken to!");
                 ToAccuseScene();
             }

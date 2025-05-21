@@ -2093,6 +2093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a6ba2502ab5067429022ec70f8b8bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 783598748}
   npc1: {fileID: 1336463827}
   npc2: {fileID: 1894951505}
 --- !u!1 &1336463822
