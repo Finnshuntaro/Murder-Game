@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;  // Use the TMPro namespace for TextMeshPro components
 
-
 public class DialogueManager : MonoBehaviour
 {
     public GameObject dialoguePanel;
@@ -15,7 +14,11 @@ public class DialogueManager : MonoBehaviour
     private Coroutine typingCoroutine;
     private string currentSentence = ""; // Store current sentence for skipping
 
-    public float textSpeed = 0.03f; // You can tweak this
+    public float textSpeed = 0.03f;
+
+    // Cooldown to prevent immediate re-triggering
+    private float dialogueCooldown = 0.3f;
+    private float cooldownTimer = 0f;
 
     void Start()
     {
@@ -23,11 +26,36 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
     }
 
+    void Update()
+    {
+        // Count down the cooldown timer
+        if (cooldownTimer > 0f)
+        {
+            cooldownTimer -= Time.deltaTime;
+        }
+
+        if (isDialogueActive && cooldownTimer <= 0f && Input.GetKeyDown(KeyCode.E))
+        {
+            if (isTyping)
+            {
+                StopCoroutine(typingCoroutine);
+                dialogueText.text = currentSentence;
+                isTyping = false;
+            }
+            else
+            {
+                DisplayNextSentence();
+            }
+
+            cooldownTimer = dialogueCooldown; // Reset cooldown after input
+        }
+    }
+
     public void StartDialogue(NPCScript npc)
     {
-        if (isDialogueActive) return;
+        if (isDialogueActive || cooldownTimer > 0f) return;
 
-        npc.hasSpoken = true; // Tracks that the NPC who has been spoken to
+        npc.hasSpoken = true;
 
         isDialogueActive = true;
         dialoguePanel.SetActive(true);
@@ -40,24 +68,6 @@ public class DialogueManager : MonoBehaviour
         }
 
         DisplayNextSentence();
-    }
-
-    void Update()
-    {
-        if (isDialogueActive && Input.GetKeyDown(KeyCode.F))
-        {
-            if (isTyping)
-            {
-                // Skip typing and finish sentence immediately
-                StopCoroutine(typingCoroutine);
-                dialogueText.text = currentSentence;
-                isTyping = false;
-            }
-            else
-            {
-                DisplayNextSentence();
-            }
-        }
     }
 
     public void DisplayNextSentence()
@@ -85,7 +95,7 @@ public class DialogueManager : MonoBehaviour
 
         foreach (char letter in sentence.ToCharArray())
         {
-            dialogueText.text += letter;
+            dialogueText.text += letter;  // Corrected here
             yield return new WaitForSeconds(textSpeed);
         }
 
@@ -96,6 +106,7 @@ public class DialogueManager : MonoBehaviour
     {
         isDialogueActive = false;
         dialoguePanel.SetActive(false);
+        cooldownTimer = dialogueCooldown; // Add short delay to avoid immediate retrigger
     }
 
     public bool IsDialogueActive()
