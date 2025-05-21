@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
     private bool isDialogueActive = false;
     private bool isTyping = false;
     private Coroutine typingCoroutine;
-    private string currentSentence = ""; // Store current sentence for skipping
+    private string currentSentence = ""; // Store(s) current sentence for skipping
 
     public float textSpeed = 0.03f; // You can tweak this
 
