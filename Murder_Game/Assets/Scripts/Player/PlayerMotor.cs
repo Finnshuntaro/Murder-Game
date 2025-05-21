@@ -30,55 +30,65 @@ public class PlayerMotor : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        controller = GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();  // Find and save the CharacterController on this object
     }
 
     // Update is called once per frame
     void Update()
     {
-        isGrounded = controller.isGrounded;
+        isGrounded = controller.isGrounded;  // Check if the player is standing on something
 
-        Handle_Footsteps();
+        Handle_Footsteps();  // Play footstep sounds if the player is moving
     }
 
+    // Moves the player based on input from keyboard (or controller)
     public void ProcessMove(Vector2 input)
     {
-        currentInput = input;
+        currentInput = input;  // Save the movement input (left/right, forward/back)
 
-        // stop movements if dialogue is happening
+        // Stop moving if a dialogue is active in the game
         if (dialogueManager != null && dialogueManager.IsDialogueActive())
-            return; 
+            return;
 
         Vector3 moveDirection = Vector3.zero;
-        moveDirection.x = input.x;
-        moveDirection.z = input.y;
+        moveDirection.x = input.x;  // Move left or right
+        moveDirection.z = input.y;  // Move forward or backward
+
+        // Move the player in the correct direction and speed
         controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
-        playerVelocity.y += gravity * Time.deltaTime;
+
+        playerVelocity.y += gravity * Time.deltaTime;  // Apply gravity to pull player down
+
         if (isGrounded && playerVelocity.y < 0)
         {
-            playerVelocity.y = -2f;
+            playerVelocity.y = -2f;  // Reset downward speed when player is on the ground
         }
-        controller.Move(playerVelocity * Time.deltaTime);
 
+        // Apply vertical movement like falling (or jumping, but we removed the jumping feature)
+        controller.Move(playerVelocity * Time.deltaTime);
     }
 
+    // Returns true if the player is touching the ground, false otherwise
     public bool IsGrounded()
     {
-        return isGrounded;
+        return isGrounded;  // Give the current grounded state
     }
 
+    // Checks if the player is moving and on the ground, then plays footstep sounds
     private void Handle_Footsteps()
     {
-        if (!useFootsteps) return;
-        if (!controller.isGrounded) return;
-        if (currentInput == Vector2.zero) return;
+        if (!useFootsteps) return;  // Do nothing if footsteps are turned off
+        if (!controller.isGrounded) return;  // Only play sounds if player is standing on the ground
+        if (currentInput == Vector2.zero) return;  // Only play if the player is moving
 
-        footstepTimer -= Time.deltaTime;
+        footstepTimer -= Time.deltaTime;  // Countdown timer for when next footstep sound can play
 
         if (footstepTimer <= 0)
         {
+            // Shoot a ray down from the camera to detect what surface the player is walking on
             if (Physics.Raycast(playerCamera.position, Vector3.down, out RaycastHit hit, 3f))
             {
+                // Play a sound based on the surface type found under the player
                 switch (hit.collider.tag)
                 {
                     case "Footsteps/CARPET":
@@ -96,7 +106,13 @@ public class PlayerMotor : MonoBehaviour
                 }
             }
 
-            footstepTimer = GetCurrentOffSet; 
+            footstepTimer = GetCurrentOffSet;  // Reset timer so footsteps don’t play too fast
         }
+    }
+
+    // Returns the current movement input, useful for other scripts that need it
+    public Vector2 GetMovementInput()
+    {
+        return currentInput;  // Give back the current movement input vector
     }
 }

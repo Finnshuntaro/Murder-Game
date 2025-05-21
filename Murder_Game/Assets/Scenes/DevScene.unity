@@ -1732,9 +1732,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 783598748}
+  playerMotor: {fileID: 1175800682}
   cam: {fileID: 330585545}
   xSensitivity: 30
-  yensitivity: 30
+  ySensitivity: 30
+  swayAmount: 0.05
+  swaySpeed: 6
 --- !u!114 &1175800682
 MonoBehaviour:
   m_ObjectHideFlags: 0
