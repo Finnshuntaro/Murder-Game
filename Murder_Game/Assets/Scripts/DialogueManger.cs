@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;  // Use the TMPro namespace for TextMeshPro components
 
-
 public class DialogueManager : MonoBehaviour
 {
     public GameObject dialoguePanel;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
+
     private Queue<string> sentences;
     private bool isDialogueActive = false;
     private bool isTyping = false;
     private Coroutine typingCoroutine;
-    private string currentSentence = ""; // Store(s) current sentence for skipping
+    private string currentSentence = ""; // Store current sentence for skipping
 
-    public float textSpeed = 0.03f; // You can tweak this
+    public float textSpeed = 0.03f; // Delay between each character
+    private bool inputOnCooldown = false;
+    private float inputCooldownDuration = 0.2f;
 
     void Start()
     {
@@ -27,13 +29,13 @@ public class DialogueManager : MonoBehaviour
     {
         if (isDialogueActive) return;
 
-        npc.hasSpoken = true; // Tracks that the NPC who has been spoken to
+        npc.hasSpoken = true; // Mark that this NPC has been interacted with
 
         isDialogueActive = true;
         dialoguePanel.SetActive(true);
         nameText.text = npc.npcName;
-        sentences = new Queue<string>();
 
+        sentences.Clear();
         foreach (string sentence in npc.dialogueLines)
         {
             sentences.Enqueue(sentence);
@@ -44,11 +46,14 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (isDialogueActive && Input.GetKeyDown(KeyCode.F))
+        if (!isDialogueActive || inputOnCooldown) return;
+
+        if (Input.GetKeyDown(KeyCode.E))
         {
+            StartCoroutine(InputCooldown());
+
             if (isTyping)
             {
-                // Skip typing and finish sentence immediately
                 StopCoroutine(typingCoroutine);
                 dialogueText.text = currentSentence;
                 isTyping = false;
@@ -64,7 +69,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            EndDialogue();
+            StartCoroutine(EndDialogueAfterDelay());
             return;
         }
 
@@ -85,17 +90,25 @@ public class DialogueManager : MonoBehaviour
 
         foreach (char letter in sentence.ToCharArray())
         {
-            dialogueText.text += letter;
+            dialogueText.text += letter; // Fixed line
             yield return new WaitForSeconds(textSpeed);
         }
 
         isTyping = false;
     }
 
-    private void EndDialogue()
+    IEnumerator EndDialogueAfterDelay()
     {
+        yield return new WaitForSeconds(0.1f); // Prevent re-trigger on same frame
         isDialogueActive = false;
         dialoguePanel.SetActive(false);
+    }
+
+    IEnumerator InputCooldown()
+    {
+        inputOnCooldown = true;
+        yield return new WaitForSeconds(inputCooldownDuration);
+        inputOnCooldown = false;
     }
 
     public bool IsDialogueActive()
