@@ -4,12 +4,15 @@ using UnityEngine;
 public class DialogueNPC : Interactable
 {
     public NPCScript npc;
-    public DialogueManager dialogueManager;
+    private DialogueManager dialogueManager;
 
     void Start()
     {
+        // Get the attached NPCScript
         if (!npc) npc = GetComponent<NPCScript>();
-        if (!dialogueManager) dialogueManager = FindObjectOfType<DialogueManager>();
+
+        // Use modern method to find the DialogueManager
+        dialogueManager = UnityEngine.Object.FindFirstObjectByType<DialogueManager>();
     }
 
     protected override void Interact()
