@@ -8,15 +8,15 @@ public class DialogueNPC : Interactable
 
     void Start()
     {
-        // Get the attached NPCScript
-        if (!npc) npc = GetComponent<NPCScript>();
+        if (!npc) npc = GetComponent<NPCScript>(); // Get the attached NPCScript
 
-        // Use modern method to find the DialogueManager
-        dialogueManager = UnityEngine.Object.FindFirstObjectByType<DialogueManager>();
+        dialogueManager = UnityEngine.Object.FindFirstObjectByType<DialogueManager>(); // Use modern method to find the DialogueManager
     }
 
+    // Called when the player interacts with this NPC
     protected override void Interact()
     {
+        // If everything is set up, start the dialogue using this NPC's data
         if (npc != null && dialogueManager != null)
         {
             dialogueManager.StartDialogue(npc);
