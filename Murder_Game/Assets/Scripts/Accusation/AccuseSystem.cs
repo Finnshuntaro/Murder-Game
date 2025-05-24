@@ -10,6 +10,8 @@ public class AccuseSystem : MonoBehaviour
     // Assigning this in the inspector allows you to check each NPC 
     public NPCScript npc1; 
     public NPCScript npc2;
+    public NPCScript npc3;
+    public NPCScript npc4;
 
     public GameObject accuseUIPanel; // This UI (panel + text) only becomes visible once all NPCs have been spoken to
 
@@ -27,7 +29,7 @@ public class AccuseSystem : MonoBehaviour
     void Update()
     {
         // If all NPCs have been spoken to, activate the UI panel (if it hasn’t been already)
-        if (!hasActivatedUI && npc1.hasSpoken && npc2.hasSpoken)
+        if (!hasActivatedUI && npc1.hasSpoken && npc2.hasSpoken && npc3.hasSpoken && npc4.hasSpoken)
         {
             if (accuseUIPanel != null)
             {
