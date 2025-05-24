@@ -5,50 +5,48 @@ using UnityEngine.SceneManagement;
 
 public class AccuseSystem : MonoBehaviour
 {
-    public DialogueManager dialogueManager; // references the dialogueManager to see the isDialogueActive state
+    private DialogueManager dialogueManager;
+    private NPCTracker npcTracker;
 
-    // Assigning this in the inspector allows you to check each NPC 
-    public NPCScript npc1; 
-    public NPCScript npc2;
-    public NPCScript npc3;
-    public NPCScript npc4;
-
-    public GameObject accuseUIPanel; // This UI (panel + text) only becomes visible once all NPCs have been spoken to
+    public GameObject accuseUIPanel; // This UI only becomes visible once all NPCs have been spoken to
 
     private bool hasActivatedUI = false; // Prevents UI from being activated repeatedly
 
     void Start()
     {
-        // At the beginning of the scene, the UI panel should not be visible
+        // Find necessary managers in the scene
+        dialogueManager = UnityEngine.Object.FindFirstObjectByType<DialogueManager>();
+        npcTracker = UnityEngine.Object.FindFirstObjectByType<NPCTracker>();
+
         if (accuseUIPanel != null)
         {
-            accuseUIPanel.SetActive(false);
+            accuseUIPanel.SetActive(false); // Hide the panel at the beginning
         }
     }
 
     void Update()
     {
-        // If all NPCs have been spoken to, activate the UI panel (if it hasn’t been already)
-        if (!hasActivatedUI && npc1.hasSpoken && npc2.hasSpoken && npc3.hasSpoken && npc4.hasSpoken)
+        // Activate UI if all NPCs have been spoken to
+        if (!hasActivatedUI && npcTracker != null && npcTracker.AllNPCsSpokenTo())
         {
             if (accuseUIPanel != null)
             {
                 accuseUIPanel.SetActive(true);
-                hasActivatedUI = true; // Prevent re-triggering
+                hasActivatedUI = true;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Q)) // The Button I plan to use to continue with the Accusation screen.
+        // 'Q' proceeds to the accusation screen
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            // First, check if a dialogue is currently active
+            // Don't allow scene change if a dialogue is still active
             if (dialogueManager != null && dialogueManager.IsDialogueActive())
             {
                 Debug.Log("You can’t proceed while a dialogue is active.");
                 return;
             }
 
-            // checks to see if all NPC's have been spoken to.
-            if (npc1.hasSpoken && npc2.hasSpoken)
+            if (npcTracker != null && npcTracker.AllNPCsSpokenTo())
             {
                 Debug.Log("All NPCs have been spoken to!");
                 ToAccuseScene();
@@ -60,7 +58,7 @@ public class AccuseSystem : MonoBehaviour
         }
     }
 
-    // changes scene to the AccuseScene
+    // Changes scene to the AccuseScene
     public void ToAccuseScene()
     {
         SceneManager.LoadScene(3);
