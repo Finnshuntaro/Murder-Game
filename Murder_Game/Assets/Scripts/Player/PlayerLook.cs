@@ -51,6 +51,10 @@ public class PlayerLook : MonoBehaviour
 
     private void HandleHeadSway()
     {
+        // Stop moving if a dialogue is active in the game
+        if (dialogueManager != null && dialogueManager.IsDialogueActive())
+            return;
+
         if (playerMotor == null || cam == null) return; // Exit if required references are not set
 
         Vector2 moveInput = playerMotor.GetMovementInput(); // Get movement input from PlayerMotor
