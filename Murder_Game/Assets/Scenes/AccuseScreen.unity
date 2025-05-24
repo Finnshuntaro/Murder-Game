@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 251589474}
   - component: {fileID: 251589473}
   m_Layer: 5
-  m_Name: Accuse3
+  m_Name: Accuse2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -283,16 +283,16 @@ RectTransform:
   m_GameObject: {fileID: 251589471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1431, y: 2.1431, z: 2.1431}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1285996619}
   m_Father: {fileID: 672770268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -142, y: 36}
-  m_SizeDelta: {x: -939.0793, y: -269.4679}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -214.31, y: 34.000008}
+  m_SizeDelta: {x: 140, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &251589473
 MonoBehaviour:
@@ -337,7 +337,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 251589474}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 672770269}
+        m_TargetAssemblyTypeName: AccuseScreenUI, Assembly-CSharp
+        m_MethodName: Defeat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &251589474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +399,7 @@ GameObject:
   - component: {fileID: 307263107}
   - component: {fileID: 307263106}
   - component: {fileID: 307263105}
+  - component: {fileID: 307263108}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -468,6 +481,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &307263108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307263104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &415298105
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,8 +612,9 @@ GameObject:
   - component: {fileID: 672770267}
   - component: {fileID: 672770266}
   - component: {fileID: 672770265}
+  - component: {fileID: 672770269}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: AccuseScreenCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -591,12 +649,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -639,9 +697,9 @@ RectTransform:
   m_Children:
   - {fileID: 415298106}
   - {fileID: 861334895}
-  - {fileID: 1646185121}
   - {fileID: 251589472}
   - {fileID: 1234941617}
+  - {fileID: 1646185121}
   - {fileID: 996092066}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -650,6 +708,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &672770269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672770264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7505a71b1948bc646ad29519068d2aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &861334894
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,16 +748,16 @@ RectTransform:
   m_GameObject: {fileID: 861334894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1431, y: 2.1431, z: 2.1431}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1573136079}
   m_Father: {fileID: 672770268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -419, y: 36}
-  m_SizeDelta: {x: -939.0793, y: -269.4679}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -642.92, y: 34}
+  m_SizeDelta: {x: 140, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &861334896
 MonoBehaviour:
@@ -732,7 +802,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 861334897}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 672770269}
+        m_TargetAssemblyTypeName: AccuseScreenUI, Assembly-CSharp
+        m_MethodName: Defeat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &861334897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,11 +887,11 @@ RectTransform:
   - {fileID: 75507487}
   m_Father: {fileID: 672770268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -234}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 123}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &996092067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,7 +935,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 996092068}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 672770269}
+        m_TargetAssemblyTypeName: AccuseScreenUI, Assembly-CSharp
+        m_MethodName: ReturnGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &996092068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,7 +1120,7 @@ GameObject:
   - component: {fileID: 1234941619}
   - component: {fileID: 1234941618}
   m_Layer: 5
-  m_Name: Accuse4
+  m_Name: Accuse3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1041,16 +1135,16 @@ RectTransform:
   m_GameObject: {fileID: 1234941616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1431, y: 2.1431, z: 2.1431}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1464204527}
   m_Father: {fileID: 672770268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 135, y: 36}
-  m_SizeDelta: {x: -943.0793, y: -269.4679}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 214.31, y: 34.000008}
+  m_SizeDelta: {x: 140, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1234941618
 MonoBehaviour:
@@ -1095,7 +1189,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1234941619}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 672770269}
+        m_TargetAssemblyTypeName: AccuseScreenUI, Assembly-CSharp
+        m_MethodName: Victory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1234941619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1634,7 +1740,7 @@ GameObject:
   - component: {fileID: 1646185123}
   - component: {fileID: 1646185122}
   m_Layer: 5
-  m_Name: Accuse2
+  m_Name: Accuse4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1649,16 +1755,16 @@ RectTransform:
   m_GameObject: {fileID: 1646185120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1431, y: 2.1431, z: 2.1431}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1982127331}
   m_Father: {fileID: 672770268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 409, y: 36}
-  m_SizeDelta: {x: -939.0793, y: -269.4679}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 642.92, y: 34.000008}
+  m_SizeDelta: {x: 140, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1646185122
 MonoBehaviour:
@@ -1703,7 +1809,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1646185123}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 672770269}
+        m_TargetAssemblyTypeName: AccuseScreenUI, Assembly-CSharp
+        m_MethodName: Defeat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1646185123
 MonoBehaviour:
   m_ObjectHideFlags: 0
