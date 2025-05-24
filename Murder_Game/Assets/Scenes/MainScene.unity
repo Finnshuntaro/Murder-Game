@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 7488279}
   m_Layer: 0
   m_Name: DiningRoomFloor
-  m_TagString: Untagged
+  m_TagString: Footsteps/CARPET
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11675,7 +11675,7 @@ GameObject:
   - component: {fileID: 1461832784}
   m_Layer: 0
   m_Name: HallFloor
-  m_TagString: Untagged
+  m_TagString: Footsteps/WOOD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14136,7 +14136,7 @@ GameObject:
   - component: {fileID: 1656391415}
   m_Layer: 0
   m_Name: HallSecondFloorSide
-  m_TagString: Untagged
+  m_TagString: Footsteps/WOOD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15738,7 +15738,7 @@ GameObject:
   - component: {fileID: 1841014428}
   m_Layer: 0
   m_Name: LivingRoomFloor
-  m_TagString: Untagged
+  m_TagString: Footsteps/CARPET
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17265,7 +17265,7 @@ GameObject:
   - component: {fileID: 1987336448}
   m_Layer: 0
   m_Name: HallSecondFloor
-  m_TagString: Untagged
+  m_TagString: Footsteps/WOOD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
