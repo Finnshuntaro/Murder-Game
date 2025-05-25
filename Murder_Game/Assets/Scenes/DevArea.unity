@@ -1622,6 +1622,34 @@ PrefabInstance:
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 783598748}
+    - target: {fileID: 3061850454721795787, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
+      propertyPath: carpetClips.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3061850454721795787, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
+      propertyPath: 'woodClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 022d040568a2a1548bf1cead1dfd3e79, type: 3}
+    - target: {fileID: 3061850454721795787, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
+      propertyPath: 'carpetClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: e4f4dcf8fbd9d8945a75f0a8c557dc7f, type: 3}
+    - target: {fileID: 3061850454721795787, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
+      propertyPath: 'carpetClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 50673e6a46ea1ae4489d162acf90b66e, type: 3}
+    - target: {fileID: 3061850454721795787, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
+      propertyPath: 'carpetClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 2509b219682336943a3e7d73d45192ee, type: 3}
+    - target: {fileID: 3061850454721795787, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
+      propertyPath: 'carpetClips.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: a39345d686b2fca4998fd0ab95976fe1, type: 3}
+    - target: {fileID: 3061850454721795787, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
+      propertyPath: 'carpetClips.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b43c189f2603e2b429579145b640a369, type: 3}
     - target: {fileID: 3463329162331979402, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
