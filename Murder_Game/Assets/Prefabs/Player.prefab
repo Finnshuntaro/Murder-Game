@@ -140,9 +140,13 @@ MonoBehaviour:
   baseStepSpeed: 0.5
   footstepAudioSource: {fileID: 8520398305339937442}
   woodClips:
-  - {fileID: 8300000, guid: 8af865f1c2f1c044cbec5fc2ee70be34, type: 3}
+  - {fileID: 8300000, guid: 022d040568a2a1548bf1cead1dfd3e79, type: 3}
   carpetClips:
-  - {fileID: 8300000, guid: 04f0a3f6ae31e7d4cb776de730e0f007, type: 3}
+  - {fileID: 8300000, guid: e4f4dcf8fbd9d8945a75f0a8c557dc7f, type: 3}
+  - {fileID: 8300000, guid: 50673e6a46ea1ae4489d162acf90b66e, type: 3}
+  - {fileID: 8300000, guid: 2509b219682336943a3e7d73d45192ee, type: 3}
+  - {fileID: 8300000, guid: a39345d686b2fca4998fd0ab95976fe1, type: 3}
+  - {fileID: 8300000, guid: b43c189f2603e2b429579145b640a369, type: 3}
   defaultClips:
   - {fileID: 8300000, guid: a4fcf5a6543ccf348930a2d89b510255, type: 3}
   playerCamera: {fileID: 550981243706723665}

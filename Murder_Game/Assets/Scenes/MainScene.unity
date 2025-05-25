@@ -10846,9 +10846,21 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1118338601980062127, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
+      propertyPath: swaySpeed
+      value: 6.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118338601980062127, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
+      propertyPath: swayAmount
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118338601980062127, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 440381635}
+    - target: {fileID: 3061850454721795787, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
+      propertyPath: baseStepSpeed
+      value: 0.52
+      objectReference: {fileID: 0}
     - target: {fileID: 3061850454721795787, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
       propertyPath: dialogueManager
       value: 
@@ -10897,6 +10909,10 @@ PrefabInstance:
       propertyPath: promptText
       value: 
       objectReference: {fileID: 1037890864}
+    - target: {fileID: 8520398305339937442, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
+      propertyPath: m_Volume
+      value: 0.16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
