@@ -1540,10 +1540,6 @@ MonoBehaviour:
     any kind of sweet seasoning added, but no one else made any comment on it. Then
     Host gave his speech about the Will, but just as he was about to talk about who
     would inherit this mansion, he choked up and collapsed onto his plate."
-  - "But I checked the dinner that everyone had, and I knew that there wasn\u2019t
-    any kind of sweet seasoning added, but no one else made any comment on it. Then
-    Host gave his speech about the Will, but just as he was about to talk about who
-    would inherit this mansion, he choked up and collapsed onto his plate."
   - 'I checked his pulse, only to find him dead. And then I called you and here we
     are! '
   - Well, I best get back to my butler duties. Good evening, Detective.
@@ -9894,6 +9890,50 @@ PrefabInstance:
     - target: {fileID: 412971403763219760, guid: a42f98e38cd36bf478b5dd4bc2ca105c, type: 3}
       propertyPath: m_Name
       value: GameUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825400577924806885, guid: a42f98e38cd36bf478b5dd4bc2ca105c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825400577924806885, guid: a42f98e38cd36bf478b5dd4bc2ca105c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825400577924806885, guid: a42f98e38cd36bf478b5dd4bc2ca105c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 248
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533594823127610307, guid: a42f98e38cd36bf478b5dd4bc2ca105c, type: 3}
+      propertyPath: m_margin.w
+      value: 19.886536
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412825993612379453, guid: a42f98e38cd36bf478b5dd4bc2ca105c, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412825993612379453, guid: a42f98e38cd36bf478b5dd4bc2ca105c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412825993612379453, guid: a42f98e38cd36bf478b5dd4bc2ca105c, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412825993612379453, guid: a42f98e38cd36bf478b5dd4bc2ca105c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412825993612379453, guid: a42f98e38cd36bf478b5dd4bc2ca105c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412825993612379453, guid: a42f98e38cd36bf478b5dd4bc2ca105c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 853
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412825993612379453, guid: a42f98e38cd36bf478b5dd4bc2ca105c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

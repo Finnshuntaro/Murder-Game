@@ -13,10 +13,12 @@ public class AccuseScreenUI : MonoBehaviour
     public void Victory()
     {
         Debug.Log("You Won");
+        SceneManager.LoadScene(4);
     }
 
     public void Defeat()
     {
         Debug.Log("You Lost");
+        SceneManager.LoadScene(5);
     }
 }
