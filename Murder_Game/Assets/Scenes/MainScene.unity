@@ -11938,6 +11938,14 @@ PrefabInstance:
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 440381635}
+    - target: {fileID: 3061850454721795787, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
+      propertyPath: woodClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3061850454721795787, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
+      propertyPath: 'woodClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: a4fcf5a6543ccf348930a2d89b510255, type: 3}
     - target: {fileID: 3463329162331979402, guid: 21c9fdca883145f4eb27a8bd81e06c1c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

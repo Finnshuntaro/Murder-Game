@@ -61,7 +61,7 @@ public class AccuseSystem : MonoBehaviour
     // Changes scene to the AccuseScene
     public void ToAccuseScene()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(3, LoadSceneMode.Additive);
         Cursor.lockState = CursorLockMode.None;
     }
 }
