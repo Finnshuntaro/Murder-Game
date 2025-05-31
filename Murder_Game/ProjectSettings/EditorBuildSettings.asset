@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: 18d14512d46a375419faf99568402113
   - enabled: 1
+    path: Assets/Scenes/ContextScreen.unity
+    guid: 2b56d2e60bd4f6d4089d7d1fce421a4f
+  - enabled: 0
     path: Assets/Scenes/DevArea.unity
     guid: 909577ca21de69245a1f944088d25b4c
   - enabled: 1
@@ -17,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AccuseScreen.unity
     guid: 6a02088b18891da47a7e065b479f9a26
+  - enabled: 1
+    path: Assets/Scenes/VictoryScreen.unity
+    guid: a7cc83adc46cc0348bb81c01da933a03
+  - enabled: 1
+    path: Assets/Scenes/LossScreen.unity
+    guid: b5a8f5cadc111c34587281645bf14281
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
